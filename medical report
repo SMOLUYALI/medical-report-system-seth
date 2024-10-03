@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Patient Medical Report Management">
+    <title>Patient Medical Report System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background: #007bff;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Patient Medical Report System</h1>
+    </header>
+    <div class="container">
+        <!-- Patient Login -->
+        <section id="patient-login">
+            <h2>Patient Login</h2>
+            <form id="login-form">
+                <div>
+                    <label for="patient-id">Patient ID</label>
+                    <input type="text" id="patient-id" placeholder="Enter your ID number">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <div class="button-container">
+                    <button type="button" onclick="loginPatient()">Login</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Patient Details and Report -->
+        <section id="patient-details" style="display:none;">
+            <h2>Patient Details and Medical Report</h2>
+            <form id="medical-report-form">
+                <!-- Personal Details -->
+                <h3>Personal Information</h3>
+                <div>
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" placeholder="Patient's full name">
+                </div>
+                <div>
+                    <label for="id-number">ID Number</label>
+                    <input type="text" id="id-number" placeholder="Patient's ID number">
+                </div>
+                <div>
+                    <label for="place-of-stay">Place of Stay</label>
+                    <input type="text" id="place-of-stay" placeholder="City, Town, or Village">
+                </div>
+                <div>
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" id="phone-number" placeholder="Patient's contact number">
+                </div>
+
+                <!-- Medical Report Section -->
+                <h3>Medical Report</h3>
+                <div>
+                    <label for="date-of-admission">Date of Admission</label>
+                    <input type="date" id="date-of-admission">
+                </div>
+                <div>
+                    <label for="treatment">Treatment</label>
+                    <textarea id="treatment" rows="3" placeholder="Describe the treatment administered"></textarea>
+                </div>
+                <div>
+                    <label for="tests">Tests</label>
+                    <textarea id="tests" rows="3" placeholder="List the tests conducted"></textarea>
+                </div>
+                <div>
+                    <label for="results">Results</label>
+                    <textarea id="results" rows="3" placeholder="Describe the test results"></textarea>
+                </div>
+                <div>
+                    <label for="prescribed-drugs">Prescribed Drugs</label>
+                    <textarea id="prescribed-drugs" rows="2" placeholder="List of drugs prescribed"></textarea>
+                </div>
+                <div>
+                    <label for="post-diagnosis-notes">Post Diagnosis Notes</label>
+                    <textarea id="post-diagnosis-notes" rows="3" placeholder="Additional information after diagnosis"></textarea>
+                </div>
+                <div class="button-container">
+                    <button type="button" onclick="submitMedicalReport()">Submit Report</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Placeholder function for handling patient login
+        function loginPatient() {
+            const patientID = document.getElementById('patient-id').value;
+            const password = document.getElementById('password').value;
+
+            // Placeholder login validation logic
+            if (patientID === '12345' && password === 'password') {
+                document.getElementById('patient-login').style.display = 'none';
+                document.getElementById('patient-details').style.display = 'block';
+                alert('Login successful!');
+            } else {
+                alert('Invalid Patient ID or Password');
+            }
+        }
+
+        // Placeholder function for handling medical report submission
+        function submitMedicalReport() {
+            // Capture all input data
+            const fullName = document.getElementById('full-name').value;
+            const idNumber = document.getElementById('id-number').value;
+            const placeOfStay = document.getElementById('place-of-stay').value;
+            const phoneNumber = document.getElementById('phone-number').value;
+            const dateOfAdmission = document.getElementById('date-of-admission').value;
+            const treatment = document.getElementById('treatment').value;
+            const tests = document.getElementById('tests').value;
+            const results = document.getElementById('results').value;
+            const prescribedDrugs = document.getElementById('prescribed-drugs').value;
+            const postDiagnosisNotes = document.getElementById('post-diagnosis-notes').value;
+
+            // Placeholder logic for submitting data
+            console.log({
+                fullName,
+                idNumber,
+                placeOfStay,
+                phoneNumber,
+                dateOfAdmission,
+                treatment,
+                tests,
+                results,
+                prescribedDrugs,
+                postDiagnosisNotes
+            });
+            alert('Medical report submitted successfully!');
+        }
+    </script>
+</body>
+</html>
